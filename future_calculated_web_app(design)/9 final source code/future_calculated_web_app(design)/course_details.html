@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>course details</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <script type="module" src="/js/course_details.js" defer></script>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo"><div>Future</div><div>Calc.</div></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">please login or register</h3>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="signed">
+      <div class="profile">
+         <h3 class="name">Welcome</h3><span style="font-size: 10px;" id="usernameDisplay"></span>
+         <div class="flex-btn">
+            <a href="#" class="delete-btn logoutBtn">Logout</a>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      // Function to get URL parameters
+      function getURLParameter(name) {
+         const urlParams = new URLSearchParams(window.location.search);
+         return urlParams.get(name);
+      }
+
+      // Get 'user' parameter from the URL
+      const user = getURLParameter('user');
+
+      // Display the username if it exists in the URL
+      if (user) {
+         document.getElementById("usernameDisplay").textContent = user;
+      } else {
+         document.getElementById("usernameDisplay").textContent = "Guest"; // Default if no user is found
+      }
+   </script>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="aps_score.html"><i class="fas fa-calculator"></i><span>Calculate APS</span></a>
+      
+      <a href="all_courses.html">
+         <i class="fas fa-graduation-cap"></i><span>Courses</span>
+      </a>
+      
+      <a href="universities.html">
+         <i class="fas fa-university"></i><span>Universities</span>
+      </a>
+      <a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact us</span></a>
+   </nav>
+
+
+</div>
+
+<section class="course-details" style="position: relative;">
+
+   <h1 class="heading" style="position: absolute; top: 5%; right: 5%; color: var(--light-color);">Course details</h1>
+
+   <div class="row course_details">
+      <!--Course details will be displayed here-->
+   </div>
+
+</section>
+
+<section class="playlist-videos">
+
+   <h1 class="heading">Free Lecture videos</h1>
+
+   <div class="box-container">
+
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="https://i.ytimg.com/vi/Hk9wal6P68A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-IBgWp0PhVMqksdzjqjDb5Z3U0w" alt="">
+         <h3>complete course tutorial (1)</h3>
+      </a>
+
+      <a class="box" href="watch-video.html">
+         <i class="fas fa-play"></i>
+         <img src="https://i.ytimg.com/vi/XZrckLYqdys/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCpupnwfbMiJOMdfoSffOZSBx906g" alt="">
+         <h3>complete course tutorial (2)</h3>
+      </a>
+   </div>
+
+</section>
+
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>Future Calculated</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script type="module" src="js/authDB.js"></script>
+
+   
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toast</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body{
+            padding: 0;
+        }
+        .toast-wrap{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .toast *{
+            font-size: 15px;
+        }
+        .toast{
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 35px 20px 25px;
+        }
+        .toast .toast-content{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="toast-wrap">
+        <div class="toast">
+            <div class="toast-content">
+                <i class="fas fa-solid fa-check"></i>
+    
+                <div class="message">
+                    <span class="text text-1">Success</span>
+                    <span class="text text-2">Your changes have been saved</span>
+                </div>
+    
+                <i class="fa-solid fa-xmark"></i>
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
