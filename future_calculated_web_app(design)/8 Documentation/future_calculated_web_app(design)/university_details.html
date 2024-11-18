@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>universities</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Base styles for the university info */
+.university-info {
+
+    max-width: 1000px; /* Maximum width of the content */
+    margin: 1rem auto; /* Center the content */
+    padding: 20px; /* Add padding around the content */
+    background-color: #f9f9f9; /* Light background color for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styles for headings */
+h2, h3 {
+    color: #333; /* Darker color for headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+/* Styling paragraph and lists */
+p {
+    font-size: 1rem; /* Base font size */
+    line-height: 1.5; /* Improve readability */
+    color: #666; /* Slightly lighter color for body text */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove padding */
+}
+
+/* Style for links */
+a {
+    color: #007bff; /* Bootstrap primary color */
+    text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover for clarity */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .university-info {
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* Adjust subheading size */
+    }
+
+    p, ul {
+        font-size: 0.9rem; /* Slightly smaller font size for readability */
+    }
+}
+
+@media (max-width: 400px) {
+    .university-info {
+        padding: 10px; /* Further reduce padding */
+    }
+
+    h2 {
+        font-size: 1.3rem; /* Further adjust heading size */
+    }
+
+    h3 {
+        font-size: 1.1rem; /* Further adjust subheading size */
+    }
+
+    p, ul {
+        font-size: 0.85rem; /* Further reduce font size if needed */
+    }
+}
+.university-info *{
+    font-size: 150%;
+}
+    </style>
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo"><div>Future</div><div>Calc.</div></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="search courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <img src="images/pic-1.jpg" class="image" alt="">
+         <h3 class="name">please login or register</h3>
+         <div class="flex-btn">
+            <a href="login.html" class="option-btn">login</a>
+            <a href="register.html" class="option-btn">register</a>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="signed">
+    <div class="profile">
+       <h3>Welcome</h3><span style="font-size: 10px;" class="name" id="usernameDisplay"></span>
+       <div class="flex-btn">
+          <a href="#" class="delete-btn logoutBtn">Logout</a>
+       </div>
+    </div>
+ </div>
+
+ <script>
+    // Function to get URL parameters
+    function getURLParameter(name) {
+       const urlParams = new URLSearchParams(window.location.search);
+       return urlParams.get(name);
+    }
+
+    // Get 'user' parameter from the URL
+    const user = getURLParameter('user');
+
+    // Display the username if it exists in the URL
+    if (user) {
+       document.getElementById("usernameDisplay").textContent = user;
+    } else {
+       document.getElementById("usernameDisplay").textContent = "Guest"; // Default if no user is found
+    }
+ </script>
+ <div class="not_signed">
+    <div class="profile">
+       <div class="box" style="text-align: center;">
+         <h3 class="title" style="font-size: 18px;">Please login or register</h3>
+         <div class="flex-btn" style="padding-top: .5rem;">
+           <a href="login.html" class="option-btn">login</a>
+           <a href="register.html" class="option-btn">register</a>
+         </div>
+       </div>
+    </div>
+ </div>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="aps_score.html"><i class="fas fa-calculator"></i><span>Calculate APS</span></a>
+      
+      <a href="all_courses.html">
+         <i class="fas fa-graduation-cap"></i><span>Courses</span>
+      </a>
+      
+      <a href="universities.html">
+         <i class="fas fa-university"></i><span>Universities</span>
+      </a>
+      <a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact us</span></a>
+   </nav>
+
+
+</div>
+
+<section class="course-details" style="position: relative;">
+
+   <div class="university-info" >
+    <a href="https://www.uj.ac.za" class="inline-option-btn" style="float: right;">Visit Web</a>
+        <h3 id="university-name" style="font-size: 28px;">University of Johannesburg</h3>
+        <p><strong>Location:</strong> <span id="university-location">Johannesburg, Gauteng, South Africa</span></p>
+        <p><strong>Website:</strong> <a id="university-website" href="#" target="_blank">https://www.uj.ac.za</a></p>
+        
+        <h3 style="font-size: 24px;">Contact Information</h3>
+        <p><strong>Email:</strong> <a id="contact-email" href="mailto:">info@uj.ac.za</a></p>
+        <p><strong>Phone:</strong> <span id="contact-phone">+27 11 559 4555</span></p>
+        <p><strong>Address:</strong> <span id="contact-address">University of Johannesburg, PO Box 524, Auckland Park, Johannesburg, 2006, South Africa</span></p>
+        
+        <h3 style="font-size: 24px;">Faculties</h3>
+        <ul id="faculties-list">
+            <li>Faculty of Art, Design and Architecture</li>
+            <li>Faculty of Education</li>
+            <li>Faculty of Engineering and the Built Environment</li>
+            <li>Faculty of Health Sciences</li>
+            <li>Faculty of Humanities</li>
+            <li>Faculty of Law</li>
+            <li>Faculty of Science</li>
+            <li>College of Business and Economics</li>
+        </ul>
+        
+    </div>
+
+    <div class="university-info">
+        <a href="https://www.uct.ac.za" class="inline-option-btn" style="float: right;">Visit Web</a>
+        <h3 id="university-name" style="font-size: 28px;">University of Cape Town</h3>
+        <p><strong>Location:</strong> <span id="university-location">Cape Town, Western Cape, South Africa</span></p>
+        <p><strong>Website:</strong> <a id="university-website" href="#" target="_blank">https://www.uct.ac.za</a></p>
+        
+        <h3 style="font-size: 24px;">Contact Information</h3>
+        <p><strong>Email:</strong> <a id="contact-email" href="mailto:">info@uct.ac.za</a></p>
+        <p><strong>Phone:</strong> <span id="contact-phone">+27 21 650 9111</span></p>
+        <p><strong>Address:</strong> <span id="contact-address">University of Cape Town, Rondebosch, Cape Town, 7700, South Africa</span></p>
+        
+        <h3 style="font-size: 24px;">Faculties</h3>
+        <ul id="faculties-list">
+            <li>Faculty of Commerce</li>
+            <li>Faculty of Engineering and the Built Environment</li>
+            <li>Faculty of Health Sciences</li>
+            <li>Faculty of Humanities</li>
+            <li>Faculty of Law</li>
+            <li>Faculty of Science</li>
+            <li>Graduate School of Business</li>
+        </ul>
+    </div>
+
+    <div class="university-info">
+        <a href="https://www.up.ac.za" class="inline-option-btn" style="float: right;">Visit Web</a>
+        <h3 id="university-name" style="font-size: 28px;">University of Pretoria</h3>
+        <p><strong>Location:</strong> <span id="university-location">Pretoria, Gauteng, South Africa</span></p>
+        <p><strong>Website:</strong> <a id="university-website" href="#" target="_blank">https://www.up.ac.za</a></p>
+        
+        <h3 style="font-size: 24px;">Contact Information</h3>
+        <p><strong>Email:</strong> <a id="contact-email" href="mailto:">csc@up.ac.za</a></p>
+        <p><strong>Phone:</strong> <span id="contact-phone">+27 12 420 4111</span></p>
+        <p><strong>Address:</strong> <span id="contact-address">University of Pretoria, Private Bag X20, Hatfield, Pretoria, 0028, South Africa</span></p>
+        
+        <h3 style="font-size: 24px;">Faculties</h3>
+        <ul id="faculties-list">
+            <li>Faculty of Economic and Management Sciences</li>
+            <li>Faculty of Education</li>
+            <li>Faculty of Engineering, Built Environment and Information Technology</li>
+            <li>Faculty of Health Sciences</li>
+            <li>Faculty of Humanities</li>
+            <li>Faculty of Law</li>
+            <li>Faculty of Natural and Agricultural Sciences</li>
+            <li>Faculty of Theology and Religion</li>
+            <li>Faculty of Veterinary Science</li>
+        </ul>
+    </div>
+
+</section>
+
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>future calculated</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script type="module" src="js/authDB.js"></script>
+
+   
+</body>
+</html>

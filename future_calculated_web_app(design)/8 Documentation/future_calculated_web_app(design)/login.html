@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>login</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <style>
+      body{
+         padding-left: 0rem;
+      }
+   </style>
+</head>
+<body>
+<header class="header">
+   
+   <section class="flex">
+      <a href="home.html" class="logo"><div>Future</div><div>Calc.</div></a>
+
+      <div class="icons">
+         <div id="menu-btn" style="display: none;" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile haven't_signed">
+         <div class="box" style="text-align: center;">
+           <h3 class="title" style="font-size: 18px;">Please login or register</h3>
+           <div class="flex-btn" style="padding-top: .5rem;">
+             <a href="login.html" class="option-btn">login</a>
+             <a href="register.html" class="option-btn">register</a>
+           </div>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<section class="form-container">
+   <form action="" method="post" enctype="multipart/form-data" id="loginForm">
+      <h3>login</h3>
+      <p>Email address <span>*</span></p>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required maxlength="50" class="box">
+      <p>Enter password <span>*</span></p>
+      <input type="password" id="password" name="pass" placeholder="Enter your password" required maxlength="20" class="box">
+      <input type="submit" value="login" class="btn" id="login_btn">
+   </form>
+</section>
+
+<script type="module" src="js/authDB.js"></script>
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

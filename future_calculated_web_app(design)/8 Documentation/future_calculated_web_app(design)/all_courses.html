@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Courses</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <script type="module" src="js/realtimedb.js" defer></script>  
+   <script type="module" src="/js/authDB.js" defer></script>
+
+</head>
+<body>
+
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo"><div>Future</div><div>Calc.</div></a>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fas fa-sun"></div>
+      </div>
+
+      <div class="profile">
+         <div class="box" style="text-align: center;">
+            <h3 class="title" style="font-size: 18px;">Please login or register</h3>
+             <div class="flex-btn">
+               <a href="login.html" class="option-btn">login</a>
+               <a href="register.html" class="option-btn">register</a>
+            </div>
+         </div>
+      </div>
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="signed">
+      <div class="profile">
+         <h3 >Welcome</h3><span style="font-size: 10px;" class="name" id="usernameDisplay"></span>
+         <div class="flex-btn">
+            <a href="#" class="delete-btn logoutBtn">Logout</a>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      // Function to get URL parameters
+      function getURLParameter(name) {
+         const urlParams = new URLSearchParams(window.location.search);
+         return urlParams.get(name);
+      }
+
+      // Get 'user' parameter from the URL
+      const user = getURLParameter('user');
+
+      // Display the username if it exists in the URL
+      if (user) {
+         document.getElementById("usernameDisplay").textContent = user;
+      } else {
+         document.getElementById("usernameDisplay").textContent = "Guest"; // Default if no user is found
+      }
+   </script>
+
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="about.html"><i class="fas fa-calculator"></i><span>Calculate APS</span></a>
+      <a href="all_courses.html">
+         <i class="fas fa-graduation-cap"></i><span>Courses</span>
+      </a>
+      <a href="">
+         <i class="fas fa-university"></i><span>Universities</span>
+      </a>
+      <a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="courses">
+
+   <h1 class="heading">Courses</h1>
+   <div class="select subject1" tabindex="1">
+      <select name="subject1">
+        <option value="" disabled selected>---Filter By University---</option>
+        <option value="University of Johannesburg">University of Johannesburg</option>
+        <option value="University of Pretoria">University of Pretoria</option>
+        <option value="University of Cape Town">University of Cape Town</option>
+      </select>
+      </select>
+   </div>
+   
+   <div class="" style="padding: 0 28rem 0 0;">
+      <form action="" method="post" class="search-tutor" onsubmit="return false;">
+         <input type="text" id="search_box" name="search_box" placeholder="Search for courses.." required maxlength="100">
+         <button type="button" class="fas fa-search" onclick="filterCourses()"></button>
+     </form>
+   </div>
+
+   <div class="box-container course_container">
+      <!--All courses are to be displayed here...-->
+   </div>
+
+</section>
+
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>future calculated</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="js/dropdown_select.js"></script>
+
+   
+</body>
+</html>
