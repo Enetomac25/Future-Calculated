@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>home</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/swiper.css">
+   <link rel="stylesheet" href="css/swiper-bundle.min.css">
+   <style>
+       .profile{
+            padding-right: 1rem;
+         }
+         .profile form h3{
+            font-size: 18px;
+            text-align: right;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--light-color);
+         }
+         .profile form input{
+            padding: 8px;
+            border-radius: 4px;
+            width: 100%;
+            background-color: #EEE;
+            margin-bottom: 6px;
+         }
+         .profile .btn{
+            background-color: var(--green);
+            font-size: 14px;
+            width: 30%; border-radius: 5rem;
+         }
+         #course_details_btn{
+            font-size: 14px; 
+            padding: 6px 8px; 
+         }
+
+      span.msg,
+      span.choose {
+          color: #555;
+          padding: 5px 0 10px;
+          display: inherit;
+      }
+      .aps_container {
+          width: 500px;
+          margin: 20px auto 0;
+          text-align: center;
+      }
+  
+      /*Styling Selectbox*/
+      .dropdwn {
+          width: 300px;
+          display: inline-block;
+          background-color: #fff;
+          border-radius: 2px;
+          box-shadow: 0 0 2px rgb(204, 204, 204);
+          transition: all .5s ease;
+          position: relative;
+          font-size: 12px;
+          color: #555;
+          font-weight: 400;
+          height: 100%;
+          text-align: left;
+      }
+      .dropdwn .select {
+          cursor: pointer;
+          display: block;
+          padding: 8px 10px;
+      }
+      .dropdwn .select > i {
+          font-size: 13px;
+          color: #888;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+          float: right;
+          line-height: 20px;
+      }
+      .dropdwn-marks {
+          width: 120px;
+          display: inline-block;
+          background-color: #fff;
+          border-radius: 2px;
+          box-shadow: 0 0 2px rgb(204, 204, 204);
+          transition: all .5s ease;
+          position: relative;
+          font-size: 12px;
+          color: #555;
+          font-weight: 400;
+          height: 100%;
+          text-align: left;
+      }
+      .dropdwn-marks .select {
+          cursor: pointer;
+          display: block;
+          padding: 8px 10px;
+      }
+      .dropdwn-marks .select > i {
+          font-size: 13px;
+          color: #888;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+          float: right;
+          line-height: 20px;
+      }
+      .dropdwn:hover,
+      .dropdwn-marks:hover {
+          box-shadow: 0 0 4px rgb(204, 204, 204);
+      }
+      .dropdwn:active,
+      .dropdwn-marks:active {
+          background-color: #f8f8f8;
+      }
+      .dropdwn.active:hover,
+      .dropdwn.active {
+          box-shadow: 0 0 4px rgb(204, 204, 204);
+          border-radius: 2px 2px 0 0;
+          background-color: #f8f8f8;
+      }
+      .dropdwn.active .select > i,
+      .dropdwn-marks.active .select > i
+      {
+          transform: rotate(-90deg);
+      }
+      .dropdwn .dropdwn-menu,
+      .dropdwn-marks .dropdwn-menu-marks {
+          position: absolute;
+          background-color: #fff;
+          width: 100%;
+          left: 0;
+          margin-top: 1px;
+          box-shadow: 0 1px 2px rgb(204, 204, 204);
+          border-radius: 0 1px 2px 2px;
+          overflow: hidden;
+          display: none;
+          max-height: 254px;
+          overflow-y: auto;
+          z-index: 9;
+      }
+      .dropdwn .dropdwn-menu li,
+      .dropdwn-marks .dropdwn-menu-marks li {
+          padding: 10px;
+          transition: all .2s ease-in-out;
+          cursor: pointer;
+          font-size: 12px;
+      } 
+      .dropdwn .dropdwn-menu,
+      .dropdwn-marks .dropdwn-menu-marks {
+          padding: 0;
+          list-style: none;
+      }
+      .dropdwn .dropdwn-menu li:hover,
+      .dropdwn-marks .dropdwn-menu-marks li:hover {
+          background-color: #f2f2f2;
+      }
+      .dropdwn .dropdwn-menu li:active,
+      .dropdwn-marks .dropdwn-menu-marks li:active {
+          background-color: #e2e2e2;
+      }
+      .dropdwn select:active, .dropdwn select:focus,
+      .dropdwn-marks select:active,  .dropdwn-marks select:focus{
+          outline: none;
+          box-shadow: none;
+      }
+      .dropdwn:after,
+      .dropdwn-marks::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          width: 0;
+          height: 0;
+          margin-top: -2px;
+          border-top: 5px solid #aaa;
+          border-right: 5px solid transparent;
+          border-left: 5px solid transparent;
+      }
+      .select_wrap label{
+          font-size: 12px;
+          color: #dfdfdf;
+      }
+  
+      .select_wrap{
+          position: relative;
+          display: flex; 
+          flex-direction: column; 
+          justify-content: center; 
+          align-items: center; 
+          gap: 0.4rem;
+          margin-bottom: 1rem;text-align: center;
+      }
+   </style>
+   <style>
+      
+   </style>
+</head>
+<body>
+  
+<header class="header">
+   
+   <section class="flex">
+
+      <a href="home.html" class="logo"><div>Future</div><div>Calc.</div></a>
+
+      <form action="search.html" method="post" class="search-form">
+         <input type="text" name="search_box" required placeholder="Search for courses..." maxlength="100">
+         <button type="submit" class="fas fa-search"></button>
+      </form>
+
+      <div class="icons">
+         <div id="menu-btn" class="fas fa-bars"></div>
+         <div id="search-btn" class="fas fa-search"></div>
+         <div id="user-btn" class="fas fa-user"></div>
+         <div id="toggle-btn" class="fa-solid fa-sun"></div>
+      </div>
+
+      <div class="profile haven't_signed">
+         <div class="box" style="text-align: center;">
+           <h3 class="title" style="font-size: 18px;">Please login or register</h3>
+           <div class="flex-btn" style="padding-top: .5rem;">
+             <a href="login.html" class="option-btn">login</a>
+             <a href="register.html" class="option-btn">register</a>
+           </div>
+         </div>
+       </div>
+       <div class="profile signed" style="display: none;">
+         <h3 class="name">User Name</h3>
+         <div class="flex-btn">
+           <a href="#" class="delete-btn">Logout</a>
+         </div>
+       </div>
+      
+
+   </section>
+
+</header>   
+
+<div class="side-bar">
+
+   <div id="close-btn">
+      <i class="fas fa-times"></i>
+   </div>
+
+   <div class="signed">
+      <div class="profile">
+         <h3>Welcome</h3><span style="font-size: 10px;" id="usernameDisplay" class="name"></span>
+         <div class="flex-btn">
+            <a href="#" class="delete-btn logoutBtn" onclick="logout()">Logout</a>
+         </div>
+      </div>
+   </div>
+   
+   <script>
+      // Function to get URL parameters
+      function getURLParameter(name) {
+         const urlParams = new URLSearchParams(window.location.search);
+         return urlParams.get(name);
+      }
+   
+      // Check if 'user' exists in localStorage, if not, get it from the URL parameter
+      let user = localStorage.getItem("user") || getURLParameter('user');
+   
+      // If user is found, store it in localStorage and display it
+      if (user) {
+         localStorage.setItem("user", user);
+         document.getElementById("usernameDisplay").textContent = user;
+         document.querySelector(".signed").style.display = "block";
+         document.querySelector(".not_signed").style.display = "none";
+      } else {
+         // Show "Guest" and login/register options if no user is found
+         document.getElementById("usernameDisplay").textContent = "Guest";
+         document.querySelector(".signed").style.display = "none";
+         document.querySelector(".not_signed").style.display = "block";
+      }
+   
+      // Logout function to clear user info from localStorage
+      function logout() {
+         localStorage.removeItem("user");
+         window.location.reload();
+      }
+   </script>
+   
+   <div class="not_signed">
+      <div class="profile">
+         <div class="box" style="text-align: center;">
+            <h3 class="title" style="font-size: 18px;">Please login or register</h3>
+            <div class="flex-btn" style="padding-top: .5rem;">
+               <a href="login.html" class="option-btn">login</a>
+               <a href="register.html" class="option-btn">register</a>
+            </div>
+         </div>
+      </div>
+   </div>
+   
+   <nav class="navbar">
+      <a href="home.html"><i class="fas fa-home"></i><span>Home</span></a>
+      <a href="aps_score.html"><i class="fas fa-calculator"></i><span>Calculate APS</span></a>
+      
+      <a href="all_courses.html">
+         <i class="fas fa-graduation-cap"></i><span>Courses</span>
+      </a>
+      
+      <a href="universities.html">
+         <i class="fas fa-university"></i><span>Universities</span>
+      </a>
+      <a href="about.html"><i class="fas fa-info-circle"></i><span>About</span></a>
+      <a href="contact.html"><i class="fas fa-headset"></i><span>Contact us</span></a>
+   </nav>
+
+</div>
+
+<section class="about">
+
+   <div class="row">
+
+      <div class="image">
+         <img src="images/banner-1.jpg" width="200px" alt="">
+      </div>
+
+      <div class="content">
+         <h3>What can you study?</h3>
+         <p>By calculating your APS (Academic Performance Score), you can unlock a world of possibilities, ranging from undergraduate programs to specialized courses, guiding you toward your academic aspirations. Click to embark on a journey of self-discovery and educational exploration.</p>
+         <a href="aps_score.html" class="inline-btn">Calculate APS</a>
+      </div>
+
+   </div>
+</section>
+<section class="courses">
+
+   <div class="popular_courses">
+      <div class="container swiper">
+         <h2 class="product-category"><span class="product-category-span">Popular Courses</span></h2>
+         <p  class="caption-wrap">See the most popular courses takens.</p>
+         <div class="slide_container">
+            <div class="product_container swiper-wrapper">
+               <div class="product_card swiper-slide">
+                  <div class="product_wrap">
+                     <div class="image_wrap">
+                     <img src="/images/up-pic.png" alt="product-image">
+                  </div>
+                  </div>
+                  <div class="product_info">
+                     <div class="product_name">Diploma in Marketing Management</div>
+                     <div class="product_quality">3 years</div>
+                     <div class="product_price">Bachelor's Degree</div>
+                     <a href="" class="inline-btn" id="course_details_btn">More details</a>
+                  </div>
+            </div>
+                 
+                 
+               <div class="product_card swiper-slide">
+                  <div class="product_wrap">
+                     <div class="image_wrap">
+                     <img src="/images/uj-pic.png" alt="product-image">
+                  </div>
+                  </div>
+                  <div class="product_info"> 
+                     <div class="product_name">Bachelor of Science in Engineering</div>
+                     <div class="product_quality">3 years</div>
+                     <div class="product_price">Bachelor's Degree</div>
+                     <a href="" class="inline-btn" id="course_details_btn">More details</a>
+                  </div>
+              </div>
+              
+                 <div class="product_card swiper-slide">
+                  <div class="product_wrap">
+                     <div class="image_wrap">
+                     <img src="/images/uct-pic.png" alt="product-image">
+                  </div>
+                  </div>
+                  <div class="product_info">
+                     <div class="product_name">Bachelor of Science in Actuarial Science</div>
+                     <div class="product_quality">3 years</div>
+                     <div class="product_price">Bachelor's Degree</div>
+                     <a href="" class="inline-btn" id="course_details_btn">More details</a>
+                  </div>
+              </div>
+              <div class="product_card swiper-slide">
+               <div class="product_wrap">
+                  <div class="image_wrap">
+                  <img src="/images/uj-pic.png" alt="product-image">
+               </div>
+               </div>
+               <div class="product_info">
+                  <div class="product_name">BSc Computer Science</div>
+                  <div class="product_quality">3 years</div>
+                  <div class="product_price">Bachelor's Degree</div>
+                  <a href="" class="inline-btn" id="course_details_btn">More details</a>
+               </div>
+           </div>
+           <div class="product_card swiper-slide">
+            <div class="product_wrap">
+               <div class="image_wrap">
+               <img src="/images/uct-pic.png" alt="product-image">
+            </div>
+            </div>
+            <div class="product_info">
+               <div class="product_name">Bachelor of Commerce in Finance</div>
+               <div class="product_quality">3 years</div>
+               <div class="product_price">Bachelor's Degree</div>
+               <a href="" class="inline-btn" id="course_details_btn">More details</a>
+            </div>
+        </div>
+             </div>
+         </div>
+         <div class="swiper-button-next swiper-navBtn" style="color: transparent; width: 40px;"><img src="images/icons/icon-angleRight.svg" style="position: absolute;" alt=""></div>
+         <div class="swiper-button-prev swiper-navBtn" style="color: transparent; width: 40px;"><img src="images/icons/icon-angleRight.svg" style="position: absolute;" alt=""></div>
+         <div class="swiper-pagination"></div>     
+      </div>
+   </div>
+</section>
+
+<footer class="footer">
+
+   &copy; copyright @ 2024 by <span>future calculated</span> | all rights reserved!
+
+</footer>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<!--swiper js-->
+<script src="js/swiper-bundle.min.js"></script>
+<script src="js/swiperjs.js"></script>
+<script type="module" src="js/authDB.js"></script>
+</body>
+</html>
